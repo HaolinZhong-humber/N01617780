@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Employees List</h1>
+    <a href="/showAddEmployeeForm" class="btn add-btn">➕ Add Employee</a>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Gender</th>  <!-- 新增性别列 -->
+            <th colspan="2">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee: ${employeeList}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:switch="${employee.gender}">
+                <span th:case="'M'">Male</span>
+                <span th:case="'F'">Female</span>
+                <span th:case="*">Unknown</span>
+            </td>
+            <td><a th:href="@{/showUpdateForm/{id}(id=${employee.id})}" class="btn update-btn">✏️ Update</a></td>
+            <td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn delete-btn">🗑️ Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
