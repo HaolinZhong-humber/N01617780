@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Edit Student</h1>
+    <form action="#" th:action="@{/students/update}" th:object="${student}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" required />
+        </div>
+
+        <div class="form-group">
+            <label>Age:</label>
+            <input type="number" th:field="*{age}" required />
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <select th:field="*{gender}" required>
+                <option value="M" th:selected="${student.gender == 'M'}">Male</option>
+                <option value="F" th:selected="${student.gender == 'F'}">Female</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" th:field="*{email}" required />
+        </div>
+
+        <div class="form-group">
+            <label>City:</label>
+            <input type="text" th:field="*{city}" required />
+        </div>
+
+        <div class="form-group">
+            <label>Date of Birth:</label>
+            <input type="date" th:field="*{dateOfBirth}" th:value="${#temporals.format(student.dateOfBirth, 'yyyy-MM-dd')}" required />
+        </div>
+
+
+
+        <button type="submit" class="btn submit-btn">Update</button>
+    </form>
+    <a href="/students" class="btn back-btn">Back</a>
+</div>
+</body>
+</html>
