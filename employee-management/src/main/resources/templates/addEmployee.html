@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Employee</title>
+<<<<<<< HEAD
 
     <!-- 加载 Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -46,12 +47,44 @@
 
         <div class="mb-3">
             <label class="form-label fw-bold">Gender:</label>
+=======
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">Add Employee</h2>
+    <form th:action="@{/employees}" th:object="${employee}" method="post" class="border p-4 shadow-sm rounded bg-light">
+        <div class="mb-3">
+            <label class="form-label">First Name:</label>
+            <input type="text" class="form-control" th:field="*{firstName}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Last Name:</label>
+            <input type="text" class="form-control" th:field="*{lastName}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control" th:field="*{email}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone:</label>
+            <input type="text" class="form-control" th:field="*{phone}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Department:</label>
+            <input type="text" class="form-control" th:field="*{department}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender:</label>
+>>>>>>> 3d7697b (lab5 submission)
             <select class="form-select" th:field="*{gender}" required>
                 <option value="">Select Gender</option>
                 <option value="M">Male</option>
                 <option value="F">Female</option>
             </select>
         </div>
+<<<<<<< HEAD
 
         <button type="submit" class="btn btn-primary w-100">Add Employee</button>
     </form>
@@ -68,3 +101,11 @@
 
 </body>
 </html>
+=======
+        <button type="submit" class="btn btn-primary w-100">Add Employee</button>
+    </form>
+    <div class="mt-3 text-center">
+        <a href="/employees" class="btn btn-link">Back to Employee List</a>
+    </div>
+</div>
+>>>>>>> 3d7697b (lab5 submission)

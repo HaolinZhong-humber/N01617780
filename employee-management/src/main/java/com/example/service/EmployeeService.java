@@ -2,13 +2,21 @@ package com.example.service;
 
 import com.example.model.Employee;
 import com.example.repository.EmployeeRepository;
+<<<<<<< HEAD
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+>>>>>>> 3d7697b (lab5 submission)
 import java.util.Optional;
 
 @Service
 public class EmployeeService {
+<<<<<<< HEAD
     private final EmployeeRepository employeeRepository;
 
     public EmployeeService(EmployeeRepository employeeRepository) {
@@ -40,5 +48,33 @@ public class EmployeeService {
 
     public void deleteEmployee(Long id) {
         employeeRepository.deleteEmployee(id);
+=======
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+
+    public Optional<Employee> getEmployeeById(Long id) {
+        return employeeRepository.findById(id);
+    }
+
+    public Employee addEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    public Employee updateEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    public boolean deleteEmployee(Long id) {
+        if (employeeRepository.existsById(id)) {
+            employeeRepository.deleteById(id);
+            return true;
+        }
+        return false;
+>>>>>>> 3d7697b (lab5 submission)
     }
 }

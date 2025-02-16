@@ -1,6 +1,9 @@
 package com.example.repository;
 
+<<<<<<< HEAD
 import com.example.model.Claim;
+=======
+>>>>>>> 3d7697b (lab5 submission)
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

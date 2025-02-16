@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.model.Employee;
+<<<<<<< HEAD
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
@@ -40,4 +41,11 @@ public class EmployeeRepository {
     public void deleteEmployee(Long id) {
         employeeMap.remove(id);
     }
+=======
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+>>>>>>> 3d7697b (lab5 submission)
 }

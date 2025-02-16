@@ -68,6 +68,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+>>>>>>> 3d7697b (lab5 submission)
     </dependencies>
 
 

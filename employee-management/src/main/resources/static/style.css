@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿/* 背景渐变 */
+=======
+﻿/* style.css */
+>>>>>>> 3d7697b (lab5 submission)
 body {
     background: linear-gradient(to right, #4facfe, #00f2fe);
     font-family: 'Arial', sans-serif;
@@ -7,7 +11,10 @@ body {
     padding: 0;
 }
 
+<<<<<<< HEAD
 /* 居中容器 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 .container {
     width: 80%;
     margin: 50px auto;
@@ -17,14 +24,21 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+<<<<<<< HEAD
 /* 标题样式 */
 h1 {
+=======
+h1, h2 {
+>>>>>>> 3d7697b (lab5 submission)
     color: #333;
     font-size: 32px;
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 /* 按钮通用样式 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 .btn {
     display: inline-block;
     padding: 10px 15px;
@@ -35,31 +49,46 @@ h1 {
     transition: 0.3s;
 }
 
+<<<<<<< HEAD
 /* 添加按钮 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 .add-btn {
     background-color: #28a745;
     color: white;
     padding: 12px 20px;
 }
 
+<<<<<<< HEAD
 /* 更新按钮 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 .update-btn {
     background-color: #007bff;
     color: white;
 }
 
+<<<<<<< HEAD
 /* 删除按钮 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 .delete-btn {
     background-color: #dc3545;
     color: white;
 }
 
+<<<<<<< HEAD
 /* 按钮悬停效果 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 .btn:hover {
     opacity: 0.8;
 }
 
+<<<<<<< HEAD
 /* 表格样式 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 table {
     width: 100%;
     margin-top: 20px;
@@ -68,21 +97,42 @@ table {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
 /* 表头样式 */
+=======
+>>>>>>> 3d7697b (lab5 submission)
 th {
     background: #007bff;
     color: white;
     padding: 12px;
     font-size: 16px;
+<<<<<<< HEAD
 }
 
 /* 表格单元格样式 */
+=======
+    text-align: left;
+}
+
+>>>>>>> 3d7697b (lab5 submission)
 td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
 }
 
+<<<<<<< HEAD
 /* 表格行悬停效果 */
 tr:hover {
     background: #f1f1f1;
 }
+=======
+tr:hover {
+    background: #f1f1f1;
+}
+
+.company-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+>>>>>>> 3d7697b (lab5 submission)
