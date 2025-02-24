@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+<div layout:fragment="content">
+    <h2>My Enrollments</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Status</th>
+                    <th>Enrollment Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="enrollment : ${enrollments}">
+                    <td th:text="${enrollment.course.code}"></td>
+                    <td th:text="${enrollment.course.name}"></td>
+                    <td th:text="${enrollment.status}"></td>
+                    <td th:text="${#temporals.format(enrollment.createdDate, 'yyyy-MM-dd HH:mm')}"></td>
+                    <td>
+                        <form th:if="${enrollment.status == 'ENROLLED'}" 
+                              th:action="@{/api/student/courses/{id}/drop(id=${enrollment.course.id})}" 
+                              method="post" style="display: inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Drop</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</html> 
