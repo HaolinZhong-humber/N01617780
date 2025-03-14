@@ -2,7 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <title>Employee List</title>
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
@@ -14,70 +13,30 @@
     <a href="/showAddEmployeeForm" class="btn add-btn">➕ Add Employee</a>
     <table>
         <thead>
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container mt-5">
-    <h1 class="text-center">Employees List</h1>
-    <div class="text-center mb-3">
-        <img th:src="@{/images/sm.jpg}" alt="Company Logo" class="company-logo">
-    </div>
-    <div class="d-flex justify-content-between">
-        <a href="/employees/new" class="btn btn-success">➕ Add Employee</a>
-    </div>
-    <table class="table table-bordered mt-3">
-        <thead class="table-primary">
->>>>>>> 3d7697b (lab5 submission)
         <tr>
             <th>Id</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-<<<<<<< HEAD
-=======
-            <th>Phone</th>
-            <th>Department</th>
->>>>>>> 3d7697b (lab5 submission)
             <th>Gender</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-<<<<<<< HEAD
         <tr th:each="employee : ${employeeList}">
-=======
-        <tr th:each="employee : ${employees}">
->>>>>>> 3d7697b (lab5 submission)
             <td th:text="${employee.id}"></td>
             <td th:text="${employee.firstName}"></td>
             <td th:text="${employee.lastName}"></td>
             <td th:text="${employee.email}"></td>
-<<<<<<< HEAD
             <td th:text="${employee.gender}"></td>
             <td>
                 <a th:href="@{/showUpdateForm/{id}(id=${employee.id})}" class="btn update-btn">✏️ Update</a>
                 <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn delete-btn" onclick="return confirm('Are you sure?')">🗑️ Delete</a>
-=======
-            <td th:text="${employee.phone}"></td>
-            <td th:text="${employee.department}"></td>
-            <td th:text="${employee.gender}"></td>
-            <td>
-                <a th:href="@{/employees/edit/{id}(id=${employee.id})}" class="btn btn-primary">✏️ Update</a>
-                <a th:href="@{/employees/delete/{id}(id=${employee.id})}" class="btn btn-danger" onclick="return confirm('Are you sure?')">🗑️ Delete</a>
->>>>>>> 3d7697b (lab5 submission)
             </td>
         </tr>
         </tbody>
     </table>
-<<<<<<< HEAD
 </div>
 
 </body>
 </html>
-=======
-</div>
->>>>>>> 3d7697b (lab5 submission)
