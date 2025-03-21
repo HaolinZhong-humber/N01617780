@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+
+    <!-- 加载 Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- 加载自定义 CSS -->
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<!-- 页面 Header -->
+<header class="bg-primary text-white text-center py-3">
+    <h1>Employee Management System</h1>
+    <img th:src="@{/images/sm.jpg}" alt="Company Logo" class="mt-2" width="100">
+</header>
+
+<!-- 主体内容 -->
+<div class="container mt-5">
+    <h2 class="text-center">Update Employee</h2>
+
+    <!-- 表单 -->
+    <form th:action="@{/updateEmployee}" th:object="${employee}" method="post" class="border p-4 shadow-sm rounded bg-light">
+
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Gender:</label>
+            <select class="form-select" th:field="*{gender}" required>
+                <option value="">Select Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">First Name:</label>
+            <input type="text" class="form-control" th:field="*{firstName}" placeholder="Enter First Name" required />
+            <small class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Last Name:</label>
+            <input type="text" class="form-control" th:field="*{lastName}" placeholder="Enter Last Name" required />
+            <small class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></small>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Email ID:</label>
+            <input type="email" class="form-control" th:field="*{email}" placeholder="Enter Email" required />
+            <small class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Update Employee</button>
+    </form>
+
+    <div class="mt-3 text-center">
+        <a href="/" class="btn btn-link">Back to Employee List</a>
+    </div>
+</div>
+
+<!-- 页面 Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>© 2025 Employee Management System. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

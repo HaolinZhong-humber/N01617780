@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <script>
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/login";
+    }
+  </script>
+</head>
+<body>
+<h2>Welcome Home!</h2>
+<p>You have successfully logged in.</p>
+<p id="countdown"></p>
+<p><a href="/index">Go to Index Now</a></p>
+
+<script>
+  let seconds = 3;
+  let timer = setInterval(() => {
+    document.getElementById("countdown").innerText =
+            'Redirecting to index page in ' + seconds + ' seconds...';
+    seconds--;
+
+    if (seconds < 0) {
+      clearInterval(timer);
+      window.location.href = "/index";
+    }
+  }, 1000);
+</script>
+</body>
+</html>

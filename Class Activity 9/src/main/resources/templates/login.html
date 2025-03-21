@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelector("form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const username = document.querySelector("input[name='username']").value;
+        const password = document.querySelector("input[name='password']").value;
+
+        const res = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password })
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          localStorage.setItem("token", data.token);
+          window.location.href = "/home";
+        } else {
+          alert("Invalid username or password");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<div>
+  <h2>Login</h2>
+  <form>
+    <label>Username:</label>
+    <input type="text" name="username" />
+    <br/>
+    <label>Password:</label>
+    <input type="password" name="password" />
+    <br/>
+    <button type="submit">Login</button>
+  </form>
+</div>
+</body>
+</html>

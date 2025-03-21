@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Employees List</h1>
+    <img th:src="@{/images/sm.jpg}" alt="Company Logo" class="mt-2" width="200" height="200">
+    <a href="/showAddEmployeeForm" class="btn add-btn">➕ Add Employee</a>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employeeList}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.gender}"></td>
+            <td>
+                <a th:href="@{/showUpdateForm/{id}(id=${employee.id})}" class="btn update-btn">✏️ Update</a>
+                <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn delete-btn" onclick="return confirm('Are you sure?')">🗑️ Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
